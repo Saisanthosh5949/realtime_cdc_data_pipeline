@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.env
+.vscode/
+data/bronze/*
+data/silver/*
+data/gold/*
+data/bad_records/*
+data/checkpoints/*
+spark-warehouse/
+metastore_db/
+*.crc
