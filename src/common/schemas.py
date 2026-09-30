@@ -1,0 +1,20 @@
+from pyspark.sql.types import *
+CUSTOMER=StructType([
+    StructField("customer_id",LongType(),True),
+    StructField("first_name",StringType(),True),
+    StructField("last_name",StringType(),True),
+    StructField("email",StringType(),True),
+    StructField("state",StringType(),True),
+    StructField("customer_segment",StringType(),True),
+    StructField("updated_at",LongType(),True)
+])
+CDC_SCHEMA=StructType([
+    StructField("before",CUSTOMER,True),
+    StructField("after",CUSTOMER,True),
+    StructField("source",StructType([
+        StructField("ts_ms",LongType(),True),
+        StructField("table",StringType(),True)
+    ]),True),
+    StructField("op",StringType(),True),
+    StructField("ts_ms",LongType(),True)
+])
